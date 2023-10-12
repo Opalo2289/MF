@@ -5,12 +5,12 @@ module.exports = withModuleFederationPlugin({
 
   remotes: {
     mfShopping: "http://localhost:4201/remoteEntry.js",
-    mfPyment: "http://localhost:4202/remoteEntry.js",        
+    mfPayment: "http://localhost:4202/remoteEntry.js",        
   },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
-  sharedMappings: ['@commons-libs']
+  sharedMappings: ["@commons-lib"]
 
 });

@@ -2,10 +2,11 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'mfshopping',
+  name: 'mfShopping',
 
   exposes: {
-    './ProductModule': '../mf-shopping/src/app/products/products.module.ts',
+    "./ProductModule":
+    "./projects/mf-shopping/src/app/products/products.module.ts",
   },
 
   shared: {

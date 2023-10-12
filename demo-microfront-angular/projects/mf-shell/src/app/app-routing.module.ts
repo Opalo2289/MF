@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 {path: '', loadChildren: () => import('mfShopping/ProductsModule').then((m)=> m.ProductsModule)},
-{path: '', loadChildren: () => import('mfPayment/PaymentComponent').then((c)=> c.PaymentComponent)}
+{path: 'payment', loadComponent: () => import('mfPayment/PaymentComponent').then((c)=> c.PaymentComponent)}
 ];
 
 @NgModule({
