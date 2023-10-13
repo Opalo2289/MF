@@ -1,12 +1,12 @@
 const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-module.exports = withModuleFederationPlugin({
+const moduleFederationConfig = withModuleFederationPlugin({
 
   name: 'mfPayment',
 
   exposes: {
     "./PaymentComponent":
-    "./projects/mf-payment/src/app/payment/payment.component.ts",
+      "./projects/mf-payment/src/app/payment/payment.component.ts",
   },
 
   shared: {
@@ -15,3 +15,6 @@ module.exports = withModuleFederationPlugin({
   sharedMappings: ['@commons-lib']
 
 });
+
+moduleFederationConfig.output.publicPath = 'http://localhost:4202/';
+module.exports = moduleFederationConfig

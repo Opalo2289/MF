@@ -1,6 +1,6 @@
 const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-module.exports = withModuleFederationPlugin({
+const moduleFederationConfig = withModuleFederationPlugin({
 
 
   remotes: {
@@ -14,3 +14,5 @@ module.exports = withModuleFederationPlugin({
   sharedMappings: ["@commons-lib"]
 
 });
+moduleFederationConfig.output.publicPath = 'http://localhost:4200/';
+module.exports = moduleFederationConfig
